@@ -3,7 +3,17 @@
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "plugins": [{
+      "name": "typescript-plugin-css-modules",
+      "options": {
+        "classnameTransform": "dashes",
+        "customMatcher": "\\.m\\.css$",
+        "dotenvOptions": {},
+        "postcssOptions": {},
+        "rendererOptions": {}
+      } 
+    }]
   },
   "include": ["vite.config.ts"]
 }

@@ -1,8 +1,13 @@
-function App() {
+import { Header } from "./components/Header/Header";
+import { Input } from "./components/Input/Input";
 
-  return (
-    <h1> Dale!! </h1>
+export function App(): JSX.Element {
+
+  return ( 
+    <>
+      <Header />
+      <Input />
+      <br />
+    </>
   )
 }
-
-export default App
