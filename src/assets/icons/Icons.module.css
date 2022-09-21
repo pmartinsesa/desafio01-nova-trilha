@@ -6,6 +6,16 @@
   fill: var(--blue);
 }
 
+.DotChecked svg:hover path:nth-child(1),
+.DotChecked svg:hover path:nth-child(2) {
+  fill: var(--purple);
+}
+
+.DotChecked svg:active path:nth-child(1),
+.DotChecked svg:hover path:nth-child(2) {
+  fill: var(--purple-dark);
+}
+
 .Trash svg:hover path {
   fill: var(--danger);
 }
