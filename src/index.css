@@ -20,12 +20,12 @@
 }
 
 body {
-  background: #454545;
+  background: var(--gray-500);
   color: var(--gray-100);
   --webkit-font-smoothing: antialiased;
 }
 
-body, input, textarea, button {
+body, input, textarea, button, span {
   font-size: 1rem;
   font-weight: 400;
   line-height: 140%;

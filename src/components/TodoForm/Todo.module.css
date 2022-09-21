@@ -1,0 +1,11 @@
+.todo-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  position: absolute;
+  width: 46rem;
+  height: 3.375rem;
+  left: calc(50% - 46rem/2);
+  top: 173px;
+}

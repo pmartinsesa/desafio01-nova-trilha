@@ -1,7 +1,25 @@
-import styles from './Input.module.css';
+import styles from "./Input.module.css";
 
-export const Input = () => {
+export type InputProps = {
+  value?: string;
+  placeholder?: string;
+  onChange?: (e: any) => void;
+};
+
+export const Input = ({
+  value,
+  placeholder,
+  onChange,
+}: InputProps): JSX.Element => {
   return (
-    <input className={styles['input']} type="text" placeholder='Adicione uma nova tarefa'/>
-  )
-}
+    <div className={styles["input-border"]}>
+      <input
+        className={styles["input"]}
+        type="text"
+        placeholder={placeholder}
+        onChange={onChange}
+        value={value}
+      />
+    </div>
+  );
+};

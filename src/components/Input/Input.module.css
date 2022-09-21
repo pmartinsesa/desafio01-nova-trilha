@@ -1,24 +1,24 @@
 .input {
-  background: var(--gray-500);
+  background: var(--gray-400);
   color: var(--gray-100);
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 
   padding: 1rem;
   gap: 0.5rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: 1px solid #0D0D0D;
 
   height: 3.335rem;
   width: 39.875rem;
 }
 
-.input input::active,
-.input input::focus {
-    border: 1px solid var(--purple-dark);
-    color: var(--gray-300);
+.input-border input:focus {
+  outline: none !important;
+  
+  border: 1px solid var(--purple-dark);
+}
+
+.input-border {
+  padding: 0.5rem;
 }
 
 ::placeholder {

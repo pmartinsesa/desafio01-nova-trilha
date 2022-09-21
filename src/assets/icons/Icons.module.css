@@ -1,0 +1,15 @@
+.DotNotChecked svg:hover path {
+  fill: var(--blue-dark);
+}
+
+.DotNotChecked svg:active path {
+  fill: var(--blue);
+}
+
+.Trash svg:hover path {
+  fill: var(--danger);
+}
+
+.Trash svg:active path {
+  fill: var(--gray-300);
+}
