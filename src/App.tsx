@@ -3,48 +3,42 @@ import { useState } from "react";
 import { Task } from "./components/Task/Task";
 import { Header } from "./components/Header/Header";
 import { TodoForm } from "./components/TodoForm/TodoForm";
+import { v4 as uuidv4 } from 'uuid';
 
 import { TaskType } from "./types";
 import { TaskTable } from "./components/TaskTable/TaskTable";
 
 export function App(): JSX.Element {
-  const [todoInput, setTodoInput] = useState("");
-  const [task, setNewTask] = useState<TaskType[]>([]);
+  const [todoInput, setTodoInput] = useState('');
+  const [tasks, setNewTask] = useState<TaskType[]>([]);
 
-  const [newTask, setTaskk] = useState<TaskType>({
-    description: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isChecked: false,
-  });
-
-  const [newTask2, setTaskkk] = useState<TaskType>({
-    description: 'teste2',
-    isChecked: true,
-  });
   const createNewTask = () => {
     if(!todoInput) return;
 
     const newTask: TaskType = {
+      id: uuidv4(),
       description: todoInput,
       isChecked: false,
     };
 
-    setNewTask([...task, newTask]);
+    setNewTask([...tasks, newTask]);
 
-    console.log(task);
+    setTodoInput('');
   };
 
-  const updateTask = (task: TaskType, index: number) => {
-    console.log(task)
-    console.log(index)
+  const updateTask = (task: TaskType) => {
+    console.log(task);
 
     task.isChecked = !task.isChecked
+    setNewTask([...tasks])
+  }
 
-    if (index === 2) {
-      setTaskk({...task})
-    }
-    else {
-      setTaskkk({...task})
-    }
+  const deleteTask = (task: TaskType) => {
+    console.log(task);
+
+    const tasksFiltered = tasks.filter(t => t.id !== task.id);
+
+    setNewTask(tasksFiltered);
   }
 
   return (
@@ -55,26 +49,8 @@ export function App(): JSX.Element {
         onChange={(e) => setTodoInput(e.target.value)}
         onSubmit={(e) => createNewTask()}
       />
-      <TaskTable />
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Task taskObject={newTask} onComplete={(e) => updateTask(newTask, 2)}/>
-      <Task taskObject={newTask2} onComplete={(e) => updateTask(newTask2, 3)}/>
+      <TaskTable tasks={tasks} onComplete={updateTask} onDelete={deleteTask}/>
     </>
   );
 }

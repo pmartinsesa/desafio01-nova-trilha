@@ -17,10 +17,6 @@
   border: 1px solid var(--purple-dark);
 }
 
-.input-border {
-  padding: 0.5rem;
-}
-
 ::placeholder {
   color: var(--gray-300);
 }
