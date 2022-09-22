@@ -27,17 +27,12 @@ export function App(): JSX.Element {
   };
 
   const updateTask = (task: TaskType) => {
-    console.log(task);
-
     task.isChecked = !task.isChecked
     setNewTask([...tasks])
   }
 
   const deleteTask = (task: TaskType) => {
-    console.log(task);
-
     const tasksFiltered = tasks.filter(t => t.id !== task.id);
-
     setNewTask(tasksFiltered);
   }
 

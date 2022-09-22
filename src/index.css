@@ -13,6 +13,13 @@
   --danger: #E25858;
 }
 
+
+:focus {
+  outline: none;
+  
+  border: 1px solid var(--purple-dark);
+} 
+
 * {
   box-sizing: border-box;
   margin: 0;

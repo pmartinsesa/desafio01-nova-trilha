@@ -37,7 +37,7 @@
 
 .icon-button {
   background: var(--gray-500);
-  border: none;
+  border: none !important;
 }
 
 .delete-button:hover {
