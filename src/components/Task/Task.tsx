@@ -11,7 +11,11 @@ export type TaskProps = {
   onDelete?: (e: any) => void;
 };
 
-export const Task = ({ taskObject, onComplete, onDelete }: TaskProps): JSX.Element => {
+export const Task = ({
+  taskObject,
+  onComplete,
+  onDelete,
+}: TaskProps): JSX.Element => {
   return (
     <div
       className={taskObject.isChecked ? styles["task-done"] : styles["task"]}
@@ -24,7 +28,10 @@ export const Task = ({ taskObject, onComplete, onDelete }: TaskProps): JSX.Eleme
       ) : (
         <span>{taskObject.description}</span>
       )}
-      <button className={`${styles["icon-button"]} ${styles["delete-button"]}`} onClick={onDelete}>
+      <button
+        className={`${styles["icon-button"]} ${styles["delete-button"]}`}
+        onClick={onDelete}
+      >
         <Trash />
       </button>
     </div>

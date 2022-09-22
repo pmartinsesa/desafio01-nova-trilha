@@ -9,7 +9,11 @@ export type TodoFormProps = {
   onSubmit?: (e: any) => void;
 };
 
-export const TodoForm = ({todoInput, onChange, onSubmit}: TodoFormProps): JSX.Element => {
+export const TodoForm = ({
+  todoInput,
+  onChange,
+  onSubmit,
+}: TodoFormProps): JSX.Element => {
   return (
     <div className={styles["todo-form"]}>
       <Input
